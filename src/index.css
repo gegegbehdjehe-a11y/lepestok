@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;500;600&family=Lato:wght@400;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Playfair Display", serif;
+  --font-sans: "Montserrat", sans-serif;
+  --font-lato: "Lato", sans-serif;
+
+  --color-sage: #8A9A5B;
+  --color-blush: #F4C2C2;
+  --color-soft-white: #FDFDFD;
+  --color-light-gray: #F7F7F7;
+  --color-dark-text: #2C2C2C;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-dark-text bg-soft-white;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-light-gray;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-blush rounded-full;
+  }
+}
+
+.floral-pattern {
+  background-image: url("https://www.transparenttextures.com/patterns/p6.png");
+  opacity: 0.05;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
